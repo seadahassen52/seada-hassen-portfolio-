@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -6,6 +6,16 @@
   <title>Seada Hassen | Aspiring Database Administrator</title>
   <meta name="description" content="Seada Hassen is an Information Systems student at Worabe University aspiring to become a Database Administrator.">
   <meta name="theme-color" content="#071426">
+  <meta name="author" content="Seada Hassen">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Seada Hassen | Aspiring Database Administrator">
+  <meta property="og:description" content="Information Systems student at Worabe University. SQL, databases, Linux and web development.">
+  <meta property="og:url" content="https://seadahassen52.github.io/seada-hassen-portfolio-/">
+  <meta property="og:image" content="https://seadahassen52.github.io/seada-hassen-portfolio-/photo_2026-09-27_04-34-46%20(1).jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"Seada Hassen","jobTitle":"Information Systems Student","alumniOf":"Worabe University","url":"https://seadahassen52.github.io/seada-hassen-portfolio-/","sameAs":["https://github.com/seadahassen52","https://t.me/yarezaqe","https://seadanew5252.blogspot.com/"]}
+  </script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -46,6 +56,7 @@
           <div class="btn-row">
             <a class="btn btn-primary" href="#projects">View My Projects</a>
             <a class="btn btn-ghost" href="#contact">Contact Me</a>
+            <a class="btn btn-ghost" href="Seada-Hassen-CV.pdf" download>Download CV</a>
           </div>
         </div>
       </div>
@@ -69,8 +80,7 @@
         </div>
       </div>
     </section>
-
-    <!-- SKILLS -->
+[11/20/2026 4:17 AM] s....h: <!-- SKILLS -->
     <section class="section alt" id="skills">
       <div class="container">
         <p class="eyebrow">What I'm learning and working with</p>
@@ -99,19 +109,24 @@
     <section class="section" id="projects">
       <div class="container">
         <p class="eyebrow">Selected work</p>
-         [11/20/2026 4:01 AM] s....h: <h2 class="title">Projects &amp; practice.</h2>
+        <h2 class="title">Projects &amp; practice.</h2>
         <p class="sub">A selection of my portfolio, SQL learning, design and blog work.</p>
         <div class="grid grid-2">
           <article class="card project">
             <span class="tag">HTML · CSS</span>
             <h3>Personal Portfolio Website</h3>
             <p>A personal website built using HTML and CSS to showcase my profile, skills and projects.</p>
-            <a class="link" href="https://seadahassen.vercel.app/" target="_blank" rel="noopener">Visit portfolio ↗</a>
+            <a class="link" href="https://seadahassen52.github.io/seada-hassen-portfolio-/" target="_blank" rel="noopener">Visit portfolio ↗</a>
           </article>
           <article class="card project">
             <span class="tag">SQL · SQL Server</span>
             <h3>SQL Learning Journey</h3>
             <p>A practical SQL Server project involving database creation, tables, relationships and SQL queries.</p>
+            <ul class="points">
+              <li>Database and table creation</li>
+              <li>Relationships between tables</li>
+              <li>Writing and testing SQL queries</li>
+            </ul>
             <a class="link" href="https://github.com/seadahassen52/my-SQL-learning-journey" target="_blank" rel="noopener">View on GitHub ↗</a>
           </article>
           <article class="card project">
@@ -144,7 +159,7 @@
           <a class="cert" href="photo_2026-08-23_05-24-08.jpg" target="_blank" rel="noopener">
             <img src="photo_2026-08-23_05-24-08.jpg" alt="e-SHE certificate: How to Study Effectively" loading="lazy">
             <div><span class="tag">e-SHE · 2025</span><h3>How to Study Effectively</h3></div>
-          </a>
+[11/20/2026 4:17 AM] s....h: </a>
           <a class="cert" href="photo_2026-08-23_05-24-15.jpg" target="_blank" rel="noopener">
             <img src="photo_2026-08-23_05-24-15.jpg" alt="e-SHE certificate: Set Goals to Manage Your Time" loading="lazy">
             <div><span class="tag">e-SHE · 2025</span><h3>Set Goals to Manage Your Time</h3></div>
@@ -164,6 +179,9 @@
           <a class="btn btn-ghost" href="https://t.me/yarezaqe" target="_blank" rel="noopener">Telegram ↗</a>
           <a class="btn btn-ghost" href="https://github.com/seadahassen52" target="_blank" rel="noopener">GitHub ↗</a>
           <a class="btn btn-ghost" href="https://seadanew5252.blogspot.com/" target="_blank" rel="noopener">Blogger ↗</a>
+          <!-- LinkedIn ካለሽ: YOUR-NAME ን በራስሽ ተክተሽ ይህን መስመር ከመጀመሪያው እና ከመጨረሻው የአስተያየት ምልክት ነጻ አድርጊ
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/YOUR-NAME" target="_blank" rel="noopener">LinkedIn ↗</a>
+          -->
         </div>
       </div>
     </section>
@@ -176,7 +194,8 @@
       <p>© 2026 · Worabe University</p>
     </div>
   </footer>
-[11/20/2026 4:01 AM] s....h: <script>
+
+  <script>
     var btn = document.getElementById('menuBtn');
     var menu = document.getElementById('menu');
     btn.addEventListener('click', function () {
@@ -189,8 +208,20 @@
         btn.setAttribute('aria-expanded', 'false');
       }
     });
+
+    // Soft fade-in on scroll
+    var items = document.querySelectorAll('.card, .cert');
+    if ('IntersectionObserver' in window) {
+      items.forEach(function (el) { el.classList.add('reveal'); });
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) { en.target.classList.add('show'); io.unobserve(en.target); }
+        });
+      }, { threshold: 0.12 });
+      items.forEach(function (el) { io.observe(el); });
+    }
   </script>
 </body>
-</html> 
-
-       
+</html>
+          
+     
